@@ -69,6 +69,7 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setWindowTitle("IPTV Player");
 
     slider->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    slider->setValue(player->volume());
     if(sortbyopt->count() <= 1){
         ui->actionprevious->setEnabled(false);
         ui->actionnext->setEnabled(false);
@@ -237,8 +238,6 @@ void MainWindow::fetch_sorters_onfinish6(QNetworkReply *rep){
     QJsonObject sampleobj;
     QJsonDocument document = QJsonDocument::fromJson(str.toUtf8());
     QJsonArray jsonArray = document.array();
-
-    slider->setTickPosition(QSlider::TickPosition(player->volume()));
 
     foreach(QJsonValue value, jsonArray){
         sampleobj = value.toObject();
