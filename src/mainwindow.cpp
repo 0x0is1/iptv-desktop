@@ -265,10 +265,9 @@ void MainWindow::fetch_sorters_onfinish6(QNetworkReply *rep){
             return;
         }
     }
-    toast->setText("Not accessible");
-    toast->setInformativeText("This channel is not accessible as of now. Please try again later!");
-    toast->exec();
+    label->setText("Status: Offline");
     this->setWindowTitle("IPTV Player");
+    on_actionnext_triggered();
 }
 
 void MainWindow::fetch_sorters(QString sd, int tidx){
@@ -341,11 +340,11 @@ void MainWindow::channels_changed(int idx){
         ui->actionnext->setEnabled(true);
         ui->actionplay->setEnabled(true);
     }
-    if(channels->currentIndex() <= 1){
+    if(channels->currentIndex() < 1){
         ui->actionprevious->setEnabled(false);
         idx = 1;
     }
-    if (channels->currentIndex() >= channels->count()-1) {
+    if (channels->currentIndex() > channels->count()-1) {
         ui->actionnext->setEnabled(false);
         idx = channels->count();
     }
@@ -360,6 +359,7 @@ void MainWindow::on_actionprevious_triggered()
 {
     int curidx = channels->currentIndex();
     channels_changed(curidx - 1);
+    on_actionplay_triggered();
 }
 
 void MainWindow::on_actionplay_triggered()
@@ -379,6 +379,7 @@ void MainWindow::on_actionnext_triggered()
 {
     int curidx = channels->currentIndex();
     channels_changed(curidx + 1);
+    on_actionplay_triggered();
 }
 
 void MainWindow::on_actionmute_triggered()
