@@ -13,7 +13,41 @@ For more see [IPTV Project](https://github.com/iptv-org/iptv).
 
 
 ## Requirements
-* Qt C++ (for libraries used, as it's not deployed yet independentaly).
+### For Debian and Ubuntu Distro
+
+- Qt (5.13.0+)
+- QMake (3.1+)
+- gstreamer (1.20.3+)
+- GNU Make (4.3+)
+
+### For Arch and Similar distros
+- Qt (5.13.0+)
+- QMake (3.1+)
+- gstreamer (1.20.3+)
+- GNU Make (4.3+)
+- gst-plugins-bad
+
+## Installation
+### For Debian and Ubuntu+
+
+```sh
+$ git clone https://github.com/0x0is1/iptv-desktop
+$ cd iptv-desktop/src
+$ qmake iptv-desktop.pro
+$ make
+$ ./iptv-desktop
+```
+## For Arch and related
+
+```sh
+$ sudo pacman -S gst-plugins-bad
+$ git clone https://github.com/0x0is1/iptv-desktop
+$ cd iptv-desktop/src
+$ qmake iptv-desktop.pro
+$ make
+$ ./iptv-desktop
+```
+
 
 ## Features
 
@@ -67,14 +101,7 @@ For more see [IPTV Project](https://github.com/iptv-org/iptv).
 </details>
 
 ## Copyright
-We respect privacy and copyrights, if iptv-org wants to remove this content please reach us by [mail](mailto:://0x0is1@protonmail.com). we will remove the content asap.
-
-## Future development
-
-- Bugs fixing
-- New Features
-- Completely deployed binaries
-- `qmake` file for manual-compilation
+We respect privacy and copyrights, if iptv-org wants to remove this content please reach us by [mail](mailto:://0x0is1@protonmail.com). we will remove the content.
 
 ## Feedback
 
