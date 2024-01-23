@@ -26,7 +26,8 @@ For more see [IPTV Project](https://github.com/iptv-org/iptv).
 - gstreamer (1.20.3+)
 - GNU Make (4.3+)
 - gst-plugins-bad
-
+- gst-libav
+- 
 ## Installation
 ### For Debian and Ubuntu+
 
@@ -41,6 +42,7 @@ $ ./iptv-desktop
 
 ```sh
 $ sudo pacman -S gst-plugins-bad
+$ sudo pacman -Syu gst-libav
 $ git clone https://github.com/0x0is1/iptv-desktop
 $ cd iptv-desktop/src
 $ qmake iptv-desktop.pro
