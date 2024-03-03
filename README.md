@@ -15,11 +15,12 @@ For more see [IPTV Project](https://github.com/iptv-org/iptv).
 ## Requirements
 ### For Debian and Ubuntu Distro
 
-- Qt (5.13.0+)
+- Qt (<5.13.0)
 - QMake (3.1+)
 - gstreamer (1.20.3+)
 - GNU Make (4.3+)
-
+- OpenSSL
+  
 ### For Arch and Similar distros
 - Qt (5.13.0+)
 - QMake (3.1+)
